@@ -4,13 +4,14 @@ import { AlunoListComponent } from './components/aluno-list/aluno-list.component
 import { AlunoFormComponent } from './components/aluno-form/aluno-form.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'alunos', pathMatch: 'full' }, 
   { path: 'alunos', component: AlunoListComponent },
-  { path: 'cadastrar', component: AlunoFormComponent },
-  { path: '**', redirectTo: 'alunos' },
+  { path: 'alunos/novo', component: AlunoFormComponent },
+  { path: 'alunos/editar/:id', component: AlunoFormComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
